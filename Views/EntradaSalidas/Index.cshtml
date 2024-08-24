@@ -1,0 +1,43 @@
+﻿@model IEnumerable<JimenaCelaya_Examen3.Models.EntradaSalida>
+
+@{
+    ViewData["Title"] = "Entradas y Salidas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear Nueva Entrada/Salida</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha Entrada</th>
+            <th>Lugar Entrada</th>
+            <th>Fecha Salida</th>
+            <th>Lugar Salida</th>
+            <th>Viajero</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDRegistro</td>
+                <td>@item.FechaEntrada</td>
+                <td>@item.LugarEntrada</td>
+                <td>@item.FechaSalida</td>
+                <td>@item.LugarSalida</td>
+                <td>@item.Viajero.NombreCompleto</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.IDRegistro">Detalles</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IDRegistro">Editar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IDRegistro">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f3e6f6; /* Color de fondo pastel morado claro */
+    color: #4b0082; /* Texto oscuro en tono púrpura */
+}
+
+header, footer {
+    background-color: #d8a2e0; /* Color morado pastel para encabezado y pie de página */
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin-right: 1em;
+    }
+
+a {
+    color: #6a0dad; /* Color de los enlaces en un tono púrpura más oscuro */
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.container {
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #e9d7f7; /* Color de fondo para contenedores */
+    border-radius: 8px;
+}

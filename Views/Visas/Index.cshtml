@@ -1,0 +1,41 @@
+﻿@model IEnumerable<JimenaCelaya_Examen3.Models.Visa>
+
+@{
+    ViewData["Title"] = "Visas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Emitir Nueva Visa</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha de Emisión</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Viajero</th>
+            <th>País</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDVisa</td>
+                <td>@item.FechaEmision.ToShortDateString()</td>
+                <td>@item.FechaVencimiento.ToShortDateString()</td>
+                <td>@item.Viajero.NombreCompleto</td>
+                <td>@item.Pais.NombrePais</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.IDVisa">Detalles</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IDVisa">Editar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IDVisa">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

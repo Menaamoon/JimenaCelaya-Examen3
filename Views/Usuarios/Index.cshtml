@@ -1,0 +1,35 @@
+﻿@model IEnumerable<JimenaCelaya_Examen3.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear Nuevo Usuario</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de Usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDUsuario</td>
+                <td>@item.NombreUsuario</td>
+            
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.IDUsuario">Detalles</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IDUsuario">Editar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IDUsuario">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

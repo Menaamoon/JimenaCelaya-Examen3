@@ -1,0 +1,48 @@
+﻿@model JimenaCelaya_Examen3.Models.EntradaSalida
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>EntradaSalida</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaEntrada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaEntrada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LugarEntrada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LugarEntrada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaSalida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LugarSalida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LugarSalida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Viajero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Viajero.Nacionalidad)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IDRegistro">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
